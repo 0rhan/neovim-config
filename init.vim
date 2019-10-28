@@ -1,7 +1,10 @@
 " Specify a directory for plugins
 " " - For Neovim: stdpath('data') . '/plugged'
 " " - Avoid using standard Vim directory names like 'plugin'
- call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
+
+" Theme
+Plug 'sainnhe/edge'
 
 "-----------------------------EXAMPLES------------------------------------------
 " " Make sure you use single quotes
@@ -37,3 +40,14 @@
 " " Initialize plugin system
 " ----------------------------------------------------------------------------
  call plug#end()
+
+"Interface Configuration
+set termguicolors
+"Edge theme
+set termguicolors
+" for dark version
+set background=dark
+colorscheme edge
+" for light version
+" set background=light
+" colorscheme edge
