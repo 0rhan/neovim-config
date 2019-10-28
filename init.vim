@@ -47,6 +47,10 @@ Plug 'sainnhe/edge'
 
 "Interface Configuration
 set termguicolors
+"Codeline numbers
+set number
+"Current line highlight
+set cursorline
 "Edge theme
 set termguicolors
 " for dark version
