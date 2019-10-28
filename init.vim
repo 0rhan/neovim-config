@@ -1,9 +1,13 @@
+"---------------CONFIG INFO---------------------------------
+"Configuration directory ".config/nvim/init.vim
+"
 " Specify a directory for plugins
 " " - For Neovim: stdpath('data') . '/plugged'
 " " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.config/nvim/plugged')
 
 " Theme
+" Github Theme
 Plug 'sainnhe/edge'
 
 "-----------------------------EXAMPLES------------------------------------------
