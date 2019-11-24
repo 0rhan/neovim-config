@@ -10,6 +10,9 @@ call plug#begin('~/.config/nvim/plugged')
 " Github Theme
 Plug 'sainnhe/edge'
 
+"Color highlighter
+Plug 'norcalli/nvim-colorizer.lua'
+
 "-----------------------------EXAMPLES------------------------------------------
 " " Make sure you use single quotes
 "
@@ -51,6 +54,8 @@ set termguicolors
 set number
 "Current line highlight
 set cursorline
+"Color highlight (nvim-colorizer.lua)
+lua require'colorizer'.setup()
 "Edge theme
 set termguicolors
 " for dark version
