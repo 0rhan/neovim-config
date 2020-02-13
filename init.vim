@@ -16,6 +16,9 @@ Plug 'norcalli/nvim-colorizer.lua'
 "Auto Pairs
 Plug 'jiangmiao/auto-pairs'
 
+"Language packs
+Plug 'sheerun/vim-polyglot'
+
 "Coc is an intellisense engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -66,6 +69,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 "Interface Configuration
 set termguicolors
+syntax on
 "NERDTree configuration
 map <C-n> :NERDTreeToggle<CR>
 "Codeline numbers
