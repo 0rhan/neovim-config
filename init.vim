@@ -10,17 +10,31 @@ call plug#begin('~/.config/nvim/plugged')
 " Github Theme
 Plug 'sainnhe/edge'
 
+"Statusline
+Plug 'vim-airline/vim-airline'
+"Statusline themes plugin
+Plug 'vim-airline/vim-airline-themes'
+
 "Color highlighter
 Plug 'norcalli/nvim-colorizer.lua'
 
+"Indent Guides
+Plug 'Yggdroot/indentLine'
+
 "Auto Pairs
 Plug 'jiangmiao/auto-pairs'
+
+"Move lines
+Plug 'matze/vim-move'
 
 "Language packs
 Plug 'sheerun/vim-polyglot'
 
 "Coc is an intellisense engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"A Vim plugin which shows a git diff in the 'gutter
+Plug 'airblade/vim-gitgutter'
 
 
 "NERDTree a file system explorer
@@ -70,8 +84,25 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Interface Configuration
 set termguicolors
 syntax on
+"Set tabsize to 2 space
+set ts=2 sw=2 et
+"Show whitespace
+set listchars=eol:¬,tab:»·,trail:·,space:·,  
+set list
+"Disable continuation of comments to the next line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+"Colorize indentile guides by colorscheme
+let g:indentLine_setColors = 0
+"Indent line character
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 "NERDTree configuration
 map <C-n> :NERDTreeToggle<CR>
+"Statusbar style
+let g:airline_powerline_fonts = 1
+let g:airline_theme='wombat'
+"Tab bar style
+let g:airline#extensions#tabline#enabled = 1
+
 "Codeline numbers
 set number
 "Current line highlight
@@ -88,7 +119,10 @@ set encoding=UTF-8
 " set background=light
 " colorscheme edge
 "
-"
+"Correct comment highlight for json
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
+
 "_________________COC INTELLISENSE ENGINECONFIGRATION________________
 " if hidden is not set, TextEdit might fail.
 set hidden
