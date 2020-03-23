@@ -44,7 +44,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "Vim dev icons
 Plug 'ryanoasis/vim-devicons'
 "vim-nerdtree-syntax-highlight
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 "-----------------------------EXAMPLES------------------------------------------
 " " Make sure you use single quotes
