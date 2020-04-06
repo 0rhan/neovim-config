@@ -81,6 +81,10 @@ Plug 'ryanoasis/vim-devicons'
 " ----------------------------------------------------------------------------
  call plug#end()
 
+ "Codeline numbers
+ set number
+ "Current line highlight
+ set cursorline
 "Interface Configuration
 set termguicolors
 syntax on
@@ -89,6 +93,19 @@ set ts=2 sw=2 et
 "Show whitespace
 set listchars=eol:¬,tab:»·,trail:·,space:·,  
 set list
+"Statusbar style
+let g:airline_powerline_fonts = 1
+let g:airline_theme= 'edge'
+let g:edge_style = 'aura'
+"Tab bar style
+let g:airline#extensions#tabline#enabled = 1
+
+"Color highlight (nvim-colorizer.lua)
+lua require'colorizer'.setup()
+"Edge theme
+set background=dark
+set encoding=UTF-8
+colorscheme edge
 "Disable continuation of comments to the next line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "Colorize indentile guides by colorscheme
@@ -97,27 +114,6 @@ let g:indentLine_setColors = 0
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 "NERDTree configuration
 map <C-n> :NERDTreeToggle<CR>
-"Statusbar style
-let g:airline_powerline_fonts = 1
-let g:airline_theme='wombat'
-"Tab bar style
-let g:airline#extensions#tabline#enabled = 1
-
-"Codeline numbers
-set number
-"Current line highlight
-set cursorline
-"Color highlight (nvim-colorizer.lua)
-lua require'colorizer'.setup()
-"Edge theme
-set termguicolors
-" for dark version
-set background=dark
-colorscheme edge
-set encoding=UTF-8
-" for light version
-" set background=light
-" colorscheme edge
 "
 "Correct comment highlight for json
 autocmd FileType json syntax match Comment +\/\/.\+$+
