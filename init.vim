@@ -36,6 +36,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "A Vim plugin which shows a git diff in the 'gutter
 Plug 'airblade/vim-gitgutter'
 
+"Lazygit in vim
+Plug 'kdheepak/lazygit.vim', { 'branch': 'nvim-v0.4.3' }
 
 "NERDTree a file system explorer
 Plug 'preservim/nerdtree'
@@ -118,6 +120,11 @@ map <C-n> :NERDTreeToggle<CR>
 "Correct comment highlight for json
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
+"Lazygit config
+let g:lazygit_floating_window_winblend = 0 " transparency of floating window
+let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
+"Mapping to call lazygit
+nnoremap <silent> <leader>lg :LazyGit<CR> 
 
 "_________________COC INTELLISENSE ENGINECONFIGRATION________________
 " if hidden is not set, TextEdit might fail.
