@@ -83,10 +83,10 @@ Plug 'ryanoasis/vim-devicons'
 " ----------------------------------------------------------------------------
  call plug#end()
 
- "Codeline numbers
- set number
- "Current line highlight
- set cursorline
+"Codeline numbers
+set number
+"Current line highlight
+set cursorline
 "Interface Configuration
 set termguicolors
 syntax on
@@ -138,7 +138,7 @@ set nowritebackup
 set cmdheight=2
 
 " You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
+set updatetime=100
 
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
