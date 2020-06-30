@@ -46,7 +46,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "Vim dev icons
 Plug 'ryanoasis/vim-devicons'
 "vim-nerdtree-syntax-highlight
-"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 "-----------------------------EXAMPLES------------------------------------------
 " " Make sure you use single quotes
@@ -126,6 +126,12 @@ let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating
 "Mapping to call lazygit
 nnoremap <silent> <leader>lg :LazyGit<CR> 
 
+"__________________COC EXTENSIONS CONFIGURATION_______________________
+let g:coc_global_extensions = [
+  \'coc-eslint', 
+  \'coc-json', 
+  \'coc-svg', 
+  \'coc-styled-components',]
 "_________________COC INTELLISENSE ENGINECONFIGRATION________________
 " if hidden is not set, TextEdit might fail.
 set hidden
