@@ -39,6 +39,10 @@ Plug 'airblade/vim-gitgutter'
 "Lazygit in vim
 Plug 'kdheepak/lazygit.vim', { 'branch': 'nvim-v0.4.3' }
 
+"FloaTerm
+"Use (neo)vim terminal in the floating/popup window.
+Plug 'voldikss/vim-floaterm'
+
 "NERDTree a file system explorer
 Plug 'preservim/nerdtree'
 "NERDTree showing git status flags
@@ -125,6 +129,12 @@ let g:lazygit_floating_window_winblend = 0 " transparency of floating window
 let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
 "Mapping to call lazygit
 nnoremap <silent> <leader>lg :LazyGit<CR> 
+
+"FloaTerm keymap
+let g:floaterm_keymap_new    = '<F7>'
+let g:floaterm_keymap_prev   = '<F8>'
+let g:floaterm_keymap_next   = '<F9>'
+let g:floaterm_keymap_toggle = '<F12>'
 
 "__________________COC EXTENSIONS CONFIGURATION_______________________
 let g:coc_global_extensions = [
