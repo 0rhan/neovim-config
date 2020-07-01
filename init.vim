@@ -27,6 +27,9 @@ Plug 'jiangmiao/auto-pairs'
 "Move lines
 Plug 'matze/vim-move'
 
+"Nerdcommenter
+Plug 'preservim/nerdcommenter'
+
 "Language packs
 Plug 'sheerun/vim-polyglot'
 
