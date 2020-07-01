@@ -21,9 +21,6 @@ Plug 'norcalli/nvim-colorizer.lua'
 "Indent Guides
 Plug 'Yggdroot/indentLine'
 
-"Auto Pairs
-Plug 'jiangmiao/auto-pairs'
-
 "Move lines
 Plug 'matze/vim-move'
 
@@ -139,12 +136,17 @@ let g:floaterm_keymap_prev   = '<F8>'
 let g:floaterm_keymap_next   = '<F9>'
 let g:floaterm_keymap_toggle = '<F12>'
 
+
 "__________________COC EXTENSIONS CONFIGURATION_______________________
 let g:coc_global_extensions = [
+  \'coc-pairs',
   \'coc-eslint', 
   \'coc-json', 
   \'coc-svg', 
   \'coc-styled-components',]
+"____________________________________________________________________
+
+
 "_________________COC INTELLISENSE ENGINECONFIGRATION________________
 " if hidden is not set, TextEdit might fail.
 set hidden
