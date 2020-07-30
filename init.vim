@@ -43,12 +43,6 @@ Plug 'kdheepak/lazygit.vim', { 'branch': 'nvim-v0.4.3' }
 "Use (neo)vim terminal in the floating/popup window.
 Plug 'voldikss/vim-floaterm'
 
-"NERDTree a file system explorer
-Plug 'preservim/nerdtree'
-"NERDTree showing git status flags
-Plug 'Xuyuanp/nerdtree-git-plugin'
-"Vim dev icons
-Plug 'ryanoasis/vim-devicons'
 "vim-nerdtree-syntax-highlight
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
@@ -119,7 +113,7 @@ let g:indentLine_setColors = 0
 "Indent line character
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 "NERDTree configuration
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :CocCommand explorer<CR>
 "
 "Correct comment highlight for json
 autocmd FileType json syntax match Comment +\/\/.\+$+
@@ -143,7 +137,10 @@ let g:coc_global_extensions = [
   \'coc-eslint', 
   \'coc-json', 
   \'coc-svg', 
-  \'coc-styled-components',]
+  \'coc-styled-components',
+  \'coc-cssmodules',
+  \'coc-explorer',
+  \'coc-discord',]
 "____________________________________________________________________
 
 
