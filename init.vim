@@ -147,7 +147,6 @@ let g:coc_global_extensions = [
   \'coc-discord',]
 "____________________________________________________________________
 
-
 "_________________COC INTELLISENSE ENGINE CONFIGRATION________________
 " if hidden is not set, TextEdit might fail.
 set hidden
