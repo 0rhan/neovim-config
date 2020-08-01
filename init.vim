@@ -7,8 +7,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " Theme
-" Github Theme
-Plug 'sainnhe/edge'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 "Statusline
 Plug 'vim-airline/vim-airline'
@@ -95,23 +94,28 @@ set listchars=eol:¬,tab:»·,trail:·,space:·,
 set list
 "Statusbar style
 let g:airline_powerline_fonts = 1
-let g:airline_theme= 'edge'
-let g:edge_style = 'aura'
+let g:airline_theme='dracula'
 "Tab bar style
 let g:airline#extensions#tabline#enabled = 1
 
 "Color highlight (nvim-colorizer.lua)
 lua require'colorizer'.setup()
-"Edge theme
+
+"Theme
 set background=dark
 set encoding=UTF-8
-colorscheme edge
+colorscheme dracula
+
 "Disable continuation of comments to the next line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-"Colorize indentile guides by colorscheme
-let g:indentLine_setColors = 0
+
 "Indent line character
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char = ''
+let g:indentLine_first_char = ''
+let g:indentLine_showFirstIndentLevel = 1
+"Colorize indentile guides 
+let g:indentLine_color_gui = '#ffffff'
+
 "NERDTree configuration
 map <C-n> :CocCommand explorer<CR>
 "
@@ -144,7 +148,7 @@ let g:coc_global_extensions = [
 "____________________________________________________________________
 
 
-"_________________COC INTELLISENSE ENGINECONFIGRATION________________
+"_________________COC INTELLISENSE ENGINE CONFIGRATION________________
 " if hidden is not set, TextEdit might fail.
 set hidden
 
