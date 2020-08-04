@@ -138,13 +138,21 @@ let g:floaterm_keymap_toggle = '<F12>'
 "__________________COC EXTENSIONS CONFIGURATION_______________________
 let g:coc_global_extensions = [
   \'coc-pairs',
+  \'coc-snippets',
+  \'coc-spell-checker',
+  \'coc-discord',
+  \'coc-yaml',
+  \'coc-xml',
+  \'coc-html',
+  \'coc-css',
+  \'coc-cssmodules',
+  \'coc-tsserver',
   \'coc-eslint', 
+  \'coc-react-refactor',
   \'coc-json', 
   \'coc-svg', 
   \'coc-styled-components',
-  \'coc-cssmodules',
-  \'coc-explorer',
-  \'coc-discord',]
+  \'coc-explorer',]
 "____________________________________________________________________
 
 "_________________COC INTELLISENSE ENGINE CONFIGRATION________________
