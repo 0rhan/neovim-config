@@ -16,5 +16,18 @@
     },
   "coc.preferences.formatOnSaveFiletypes": [
     "dart"
-  ]
+  ],
+"explorer.focus": true,
+"explorer.toggle": true,
+"explorer.previewAction.onHover": true,
+"explorer.quitOnOpen": true,
+"explorer.activeMode":true,
+"explorer.openAction.strategy": "tab",
+"explorer.icon.enableNerdfont": true,
+"explorer.buffer.tabOnly": true,
+"explorer.file.autoReveal": true,
+"explorer.file.showHiddenFiles": true,
+"explorer.file.column.git.showIgnored": true,
+"explorer.file.column.indent.indentLine": true,
+"explorer.file.tabCD": true
 }
