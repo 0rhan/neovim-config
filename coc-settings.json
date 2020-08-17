@@ -3,7 +3,7 @@
       "dart": {
             "command": "dart",
             "args": [
-                    "/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot",
+                    "/opt/dart-sdk/bin/snapshots/analysis_server.dart.snapshot",
                     "--lsp",
                     "--client-id",
                     "vim",
@@ -20,7 +20,6 @@
 "explorer.focus": true,
 "explorer.toggle": true,
 "explorer.previewAction.onHover": true,
-"explorer.quitOnOpen": true,
 "explorer.activeMode":true,
 "explorer.openAction.strategy": "tab",
 "explorer.icon.enableNerdfont": true,
