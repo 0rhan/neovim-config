@@ -7,7 +7,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " Theme
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'sainnhe/edge'
 
 "Statusline
 Plug 'vim-airline/vim-airline'
@@ -94,20 +94,26 @@ set listchars=eol:¬,tab:»·,trail:·,space:·,
 set list
 "Statusbar style
 let g:airline_powerline_fonts = 1
-let g:airline_theme='dracula'
 "Tab bar style
 let g:airline#extensions#tabline#enabled = 1
 
 "Color highlight (nvim-colorizer.lua)
 lua require'colorizer'.setup()
 
-"Theme
+"----------Theme------------
 set background=dark
 set encoding=UTF-8
-colorscheme dracula
+
+" the configuration options should be placed before `colorscheme edge`
+let g:edge_style = 'aura'
+let g:edge_disable_italic_comment = 1
+
+colorscheme edge 
+let g:airline_theme = 'edge'
 
 "Disable continuation of comments to the next line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+"-----------------------------
 
 "Indent line character
 let g:indentLine_char = ''
