@@ -11,8 +11,12 @@ Plug 'sainnhe/edge'
 
 "Statusline
 Plug 'vim-airline/vim-airline'
+
 "Statusline themes plugin
 Plug 'vim-airline/vim-airline-themes'
+
+"Devicons
+Plug 'ryanoasis/vim-devicons'
 
 "Color highlighter
 Plug 'norcalli/nvim-colorizer.lua'
@@ -31,6 +35,9 @@ Plug 'sheerun/vim-polyglot'
 
 "Coc is an intellisense engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"Auto close (X)HTML tags
+Plug 'alvan/vim-closetag'
 
 "A Vim plugin which shows a git diff in the 'gutter
 Plug 'airblade/vim-gitgutter'
@@ -147,6 +154,7 @@ let g:coc_global_extensions = [
   \'coc-snippets',
   \'coc-spell-checker',
   \'coc-discord',
+  \'coc-prettier',
   \'coc-yaml',
   \'coc-xml',
   \'coc-html',
