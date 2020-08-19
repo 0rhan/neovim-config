@@ -33,6 +33,9 @@ Plug 'preservim/nerdcommenter'
 "Language packs
 Plug 'sheerun/vim-polyglot'
 
+"Styled components syntax highlighting
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
 "Coc is an intellisense engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
