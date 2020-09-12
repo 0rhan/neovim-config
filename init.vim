@@ -4,10 +4,27 @@
 " Specify a directory for plugins
 " " - For Neovim: stdpath('data') . '/plugged'
 " " - Avoid using standard Vim directory names like 'plugin'
+"-----------------------------------------------------------
+
+"-----------------Vim buffet colors-------------------------
+" Note: Make sure the function is defined before `vim-buffet` is loaded.
+function! g:BuffetSetCustomColors()
+  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#6CB6EB guifg=#2B2D37
+  hi! BuffetActiveBuffer guibg=#9DCBEB guifg=#2b2d37
+  hi! BuffetBuffer guibg=#2b2d37 guifg=#CCDEEB
+  hi! BuffetModCurrentBuffer guibg=#A0C980 guifg=#2b2d37
+  hi! BuffetModActiveBuffer guibg=#B4C9A3 guifg=#2b2d37
+  hi! BuffetTab guibg=#404455 guifg=#A0C980
+endfunction
+"-----------------------------------------------------------
+
 call plug#begin('~/.config/nvim/plugged')
 
 " Theme
 Plug 'sainnhe/edge'
+
+" IDE-like tabline
+Plug 'bagrat/vim-buffet'
 
 "Statusline
 Plug 'vim-airline/vim-airline'
@@ -21,8 +38,14 @@ Plug 'ryanoasis/vim-devicons'
 "Color highlighter
 Plug 'norcalli/nvim-colorizer.lua'
 
+"Make the yanked region apparent
+Plug 'vim-highlightedyank'
+
 "Indent Guides
 Plug 'Yggdroot/indentLine'
+
+"Winresizer plugin for easy resizing vim windows
+Plug 'simeji/winresizer'
 
 "Move lines
 Plug 'matze/vim-move'
@@ -102,10 +125,12 @@ set ts=2 sw=2 et
 "Show whitespace
 set listchars=eol:¬,tab:»·,trail:·,space:·,  
 set list
-"Statusbar style
+
+"--------Statusbar style---------------
 let g:airline_powerline_fonts = 1
-"Tab bar style
-let g:airline#extensions#tabline#enabled = 1
+let g:airline_left_sep = "\uE0B8"
+let g:airline_right_sep = "\uE0BA"
+"--------------------------------------
 
 "Color highlight (nvim-colorizer.lua)
 lua require'colorizer'.setup()
@@ -124,6 +149,13 @@ let g:airline_theme = 'edge'
 "Disable continuation of comments to the next line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "-----------------------------
+
+"------Tabline config--------------------
+let g:buffet_powerline_separators = 1
+let g:buffet_tab_icon = "\uf00a"
+let g:buffet_left_trunc_icon = "\uf0a8"
+let g:buffet_right_trunc_icon = "\uf0a9"
+"----------------------------------------
 
 "Indent line character
 let g:indentLine_char = ''
@@ -166,6 +198,7 @@ let g:coc_global_extensions = [
   \'coc-tsserver',
   \'coc-eslint', 
   \'coc-react-refactor',
+  \'coc-flutter',
   \'coc-json', 
   \'coc-svg', 
   \'coc-styled-components',
