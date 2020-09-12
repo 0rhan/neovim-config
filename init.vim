@@ -39,7 +39,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'norcalli/nvim-colorizer.lua'
 
 "Make the yanked region apparent
-Plug 'vim-highlightedyank'
+Plug 'machakann/vim-highlightedyank'
 
 "Indent Guides
 Plug 'Yggdroot/indentLine'
