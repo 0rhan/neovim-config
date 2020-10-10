@@ -28,5 +28,8 @@
 "explorer.file.showHiddenFiles": true,
 "explorer.file.column.git.showIgnored": true,
 "explorer.file.column.indent.indentLine": true,
-"explorer.file.tabCD": true
+"explorer.file.tabCD": true,
+"emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
 }

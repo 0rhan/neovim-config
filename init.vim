@@ -1,4 +1,4 @@
-"---------------CONFIG INFO---------------------------------
+"---------------CONFIG INFO---------------------------------,
 "Configuration directory ".config/nvim/init.vim
 "
 " Specify a directory for plugins
@@ -56,14 +56,23 @@ Plug 'preservim/nerdcommenter'
 "Language packs
 Plug 'sheerun/vim-polyglot'
 
-"Styled components syntax highlighting
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+"Snippets
+Plug 'honza/vim-snippets'
 
-"Coc is an intellisense engine
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Emmet (Zencode)
+Plug 'mattn/emmet-vim'
 
 "Auto close (X)HTML tags
 Plug 'alvan/vim-closetag'
+
+"Styled components syntax highlighting
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
+"JSX
+Plug 'MaxMEllon/vim-jsx-pretty'
+
+"Coc is an intellisense engine
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "A Vim plugin which shows a git diff in the 'gutter
 Plug 'airblade/vim-gitgutter'
@@ -77,6 +86,9 @@ Plug 'voldikss/vim-floaterm'
 
 "vim-nerdtree-syntax-highlight
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+"Vlang support
+Plug 'ollykel/v-vim'
 
 "-----------------------------EXAMPLES------------------------------------------
 " " Make sure you use single quotes
@@ -161,7 +173,7 @@ let g:buffet_right_trunc_icon = "\uf0a9"
 let g:indentLine_char = ''
 let g:indentLine_first_char = ''
 let g:indentLine_showFirstIndentLevel = 1
-"Colorize indentile guides 
+"Colorize indentline guides 
 let g:indentLine_color_gui = '#ffffff'
 
 "NERDTree configuration
@@ -170,35 +182,68 @@ map <C-n> :CocCommand explorer<CR>
 "Correct comment highlight for json
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
+
+"--------------------LAZYGIT----------------------------------------------
 "Lazygit config
 let g:lazygit_floating_window_winblend = 0 " transparency of floating window
 let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
 "Mapping to call lazygit
 nnoremap <silent> <leader>lg :LazyGit<CR> 
+"--------------------------------------------------------------------------
 
+"--------------------------FLOATERM-----------------------------------------
 "FloaTerm keymap
 let g:floaterm_keymap_new    = '<F7>'
 let g:floaterm_keymap_prev   = '<F8>'
 let g:floaterm_keymap_next   = '<F9>'
 let g:floaterm_keymap_toggle = '<F12>'
+"---------------------------------------------------------------------------
+
+"____________________________CLOSETAG________________________________________
+" Disables auto-close if not in a  region (based on filetype)
+let g:closetag_filenames = '*.html,*.xhtml,*.js'
+let g:closetag_regions = {
+\ 'typescript.tsx': 'jsxRegion,tsxRegion',
+\ 'javascript.jsx': 'jsxRegion',
+\}
+"____________________________________________________________________________
+
+"_____________________________EMMET__________________________________________
+"config for jsx syntax in js files
+let g:user_emmet_settings = {
+\  'javascript' : {
+\      'extends' : 'jsx',
+\  },
+\}
+"____________________________________________________________________________
+
+"_______________________COC-PAIRS____________________________________________
+"For enable closetag
+let b:coc_pairs_disabled = ['<']
+"____________________________________________________________________________
 
 
 "__________________COC EXTENSIONS CONFIGURATION_______________________
 let g:coc_global_extensions = [
-  \'coc-pairs',
+  \'coc-marketplace',
   \'coc-snippets',
+  \'coc-pairs',
   \'coc-spell-checker',
-  \'coc-discord',
+  \'coc-discord-neovim',
   \'coc-prettier',
   \'coc-yaml',
   \'coc-xml',
+  \'coc-import-cost',
   \'coc-html',
+  \'coc-emmet',
   \'coc-css',
+  \'coc-scssmodules',
   \'coc-cssmodules',
   \'coc-tsserver',
   \'coc-eslint', 
+  \'coc-webpack',
   \'coc-react-refactor',
-  \'coc-flutter',
+  \'coc-flutter-tools',
   \'coc-json', 
   \'coc-svg', 
   \'coc-styled-components',
