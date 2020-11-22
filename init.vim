@@ -17,6 +17,9 @@ Plug 'romgrk/barbar.nvim'
 "This plugin aims to mimic tmux's display-pane feature, which enables you to choose a window interactively.
 Plug 't9md/vim-choosewin'
 
+"A simple plugin to toggle zoom of current window within the current tab.
+Plug 'dhruvasagar/vim-zoom'
+
 "Statusline
 Plug 'vim-airline/vim-airline'
 
