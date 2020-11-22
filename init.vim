@@ -6,25 +6,13 @@
 " " - Avoid using standard Vim directory names like 'plugin'
 "-----------------------------------------------------------
 
-"-----------------Vim buffet colors-------------------------
-" Note: Make sure the function is defined before `vim-buffet` is loaded.
-function! g:BuffetSetCustomColors()
-  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#6CB6EB guifg=#2B2D37
-  hi! BuffetActiveBuffer guibg=#9DCBEB guifg=#2b2d37
-  hi! BuffetBuffer guibg=#2b2d37 guifg=#CCDEEB
-  hi! BuffetModCurrentBuffer guibg=#A0C980 guifg=#2b2d37
-  hi! BuffetModActiveBuffer guibg=#B4C9A3 guifg=#2b2d37
-  hi! BuffetTab guibg=#404455 guifg=#A0C980
-endfunction
-"-----------------------------------------------------------
-
 call plug#begin('~/.config/nvim/plugged')
 
 " Theme
 Plug 'sainnhe/edge'
 
 " IDE-like tabline
-Plug 'bagrat/vim-buffet'
+Plug 'pacha/vem-tabline'
 
 "Statusline
 Plug 'vim-airline/vim-airline'
@@ -32,11 +20,18 @@ Plug 'vim-airline/vim-airline'
 "Statusline themes plugin
 Plug 'vim-airline/vim-airline-themes'
 
+"Brings physics-based smooth scrolling to the Vim/Neovim world!
+Plug 'yuttie/comfortable-motion.vim'
+
 "Devicons
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 
 "Color highlighter
 Plug 'norcalli/nvim-colorizer.lua'
+
+"Automatically highlighting other uses of the current word under the cursor
+Plug 'RRethy/vim-illuminate'
 
 "Make the yanked region apparent
 Plug 'machakann/vim-highlightedyank'
@@ -129,6 +124,8 @@ Plug 'ollykel/v-vim'
 set number
 "Current line highlight
 set cursorline
+"enable mouse
+set mouse=a
 "Interface Configuration
 set termguicolors
 syntax on
@@ -144,8 +141,14 @@ let g:airline_left_sep = "\uE0B8"
 let g:airline_right_sep = "\uE0BA"
 "--------------------------------------
 
-"Color highlight (nvim-colorizer.lua)
+"--Color highlight (nvim-colorizer.lua)--
 lua require'colorizer'.setup()
+"----------------------------------------
+
+"------Illuminate--------------------
+" Time in milliseconds (default 250)
+let g:Illuminate_delay = 250
+"------------------------------------
 
 "----------Theme------------
 set background=dark
@@ -162,23 +165,36 @@ let g:airline_theme = 'edge'
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "-----------------------------
 
+"------comfortable-motion---------------------
+let g:comfortable_motion_scroll_down_key = "j"
+let g:comfortable_motion_scroll_up_key = "k"
+noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
+noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
+"--------------------------------------------
+
 "------Tabline config--------------------
-let g:buffet_powerline_separators = 1
-let g:buffet_tab_icon = "\uf00a"
-let g:buffet_left_trunc_icon = "\uf0a8"
-let g:buffet_right_trunc_icon = "\uf0a9"
+let g:vem_tabline_show = 2
+let vem_tabline_multiwindow_mode = 1
+" delete buffer
+nmap <leader>x <Plug>vem_delete_buffer-
+
+nmap <leader>h <Plug>vem_move_buffer_left-
+nmap <leader>l <Plug>vem_move_buffer_right-
+nmap <leader>p <Plug>vem_prev_buffer-
+nmap <leader>n <Plug>vem_next_buffer-
 "----------------------------------------
 
-"Indent line character
+"-------Indent line character------------
 let g:indentLine_char = ''
 let g:indentLine_first_char = ''
 let g:indentLine_showFirstIndentLevel = 1
 "Colorize indentline guides 
 let g:indentLine_color_gui = '#ffffff'
+"-----------------------------------------
 
-"NERDTree configuration
+"----Coc-explorer configuration----
 map <C-n> :CocCommand explorer<CR>
-"
+"---------------------------------
 "Correct comment highlight for json
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
