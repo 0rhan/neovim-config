@@ -14,6 +14,9 @@ Plug 'sainnhe/edge'
 " IDE-like tabline
 Plug 'romgrk/barbar.nvim'
 
+"This plugin aims to mimic tmux's display-pane feature, which enables you to choose a window interactively.
+Plug 't9md/vim-choosewin'
+
 "Statusline
 Plug 'vim-airline/vim-airline'
 
@@ -188,12 +191,20 @@ let bufferline.maximum_padding = 4
 nnoremap <silent> <A-c> :bw<CR>
 "---------------------------------------------
 
-"Indent line character
+"--------------[choosewin config]--------------
+" invoke with '-'
+nmap  -  <Plug>(choosewin)
+" to use overlay feature
+let g:choosewin_overlay_enable = 1
+"----------------------------------------------
+
+"--------[Indent line character]--------------------
 let g:indentLine_char = ''
 let g:indentLine_first_char = ''
 let g:indentLine_showFirstIndentLevel = 1
 "Colorize indentline guides 
 let g:indentLine_color_gui = '#ffffff'
+"----------------------------------------------------
 
 "NERDTree configuration
 map <C-n> :CocCommand explorer<CR>
