@@ -41,6 +41,9 @@ Plug 'ryanoasis/vim-devicons'
 "Color highlighter
 Plug 'norcalli/nvim-colorizer.lua'
 
+"Underlines the word under the cursor
+Plug 'itchyny/vim-cursorword'
+
 "Make the yanked region apparent
 Plug 'machakann/vim-highlightedyank'
 
