@@ -6,25 +6,13 @@
 " " - Avoid using standard Vim directory names like 'plugin'
 "-----------------------------------------------------------
 
-"-----------------Vim buffet colors-------------------------
-" Note: Make sure the function is defined before `vim-buffet` is loaded.
-function! g:BuffetSetCustomColors()
-  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#6CB6EB guifg=#2B2D37
-  hi! BuffetActiveBuffer guibg=#9DCBEB guifg=#2b2d37
-  hi! BuffetBuffer guibg=#2b2d37 guifg=#CCDEEB
-  hi! BuffetModCurrentBuffer guibg=#A0C980 guifg=#2b2d37
-  hi! BuffetModActiveBuffer guibg=#B4C9A3 guifg=#2b2d37
-  hi! BuffetTab guibg=#404455 guifg=#A0C980
-endfunction
-"-----------------------------------------------------------
-
 call plug#begin('~/.config/nvim/plugged')
 
 " Theme
 Plug 'sainnhe/edge'
 
 " IDE-like tabline
-Plug 'bagrat/vim-buffet'
+Plug 'romgrk/barbar.nvim'
 
 "Statusline
 Plug 'vim-airline/vim-airline'
@@ -36,6 +24,7 @@ Plug 'ojroques/vim-scrollstatus'
 Plug 'vim-airline/vim-airline-themes'
 
 "Devicons
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 
 "Color highlighter
@@ -129,7 +118,7 @@ Plug 'ollykel/v-vim'
 "
 " " Initialize plugin system
 " ----------------------------------------------------------------------------
- call plug#end()
+call plug#end()
 
 "Codeline numbers
 set number
@@ -175,12 +164,29 @@ let g:airline_theme = 'edge'
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "-----------------------------
 
-"------Tabline config--------------------
-let g:buffet_powerline_separators = 1
-let g:buffet_tab_icon = "\uf00a"
-let g:buffet_left_trunc_icon = "\uf0a8"
-let g:buffet_right_trunc_icon = "\uf0a9"
-"----------------------------------------
+"------------[barbar config]--------------
+let bufferline = {}
+
+" Enable/disable animations
+let bufferline.animation = v:true
+
+" Enable/disable icons
+" if set to "numbers", will show buffer index in the tabline
+let bufferline.icons = v:true
+
+" Enable/disable close button
+let bufferline.closable = v:false
+
+" Enables/disable clickable tabs
+"  - left-click: go to buffer
+"  - middle-click: delete buffer
+let bufferline.clickable = v:true
+
+" Sets the maximum padding width with which to surround each tab
+let bufferline.maximum_padding = 4
+
+nnoremap <silent> <A-c> :bw<CR>
+"---------------------------------------------
 
 "Indent line character
 let g:indentLine_char = ''
