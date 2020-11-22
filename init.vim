@@ -189,7 +189,7 @@ let bufferline.closable = v:false
 let bufferline.clickable = v:true
 
 " Sets the maximum padding width with which to surround each tab
-let bufferline.maximum_padding = 4
+let bufferline.maximum_padding = 0
 
 nnoremap <silent> <A-c> :bw<CR>
 "---------------------------------------------
