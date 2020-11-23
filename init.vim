@@ -29,6 +29,9 @@ Plug 'ojroques/vim-scrollstatus'
 "Statusline themes plugin
 Plug 'vim-airline/vim-airline-themes'
 
+"This (neo)vim plugin makes scrolling nice and smooth.
+Plug 'psliwka/vim-smoothie'
+
 "Devicons
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
@@ -36,8 +39,8 @@ Plug 'ryanoasis/vim-devicons'
 "Color highlighter
 Plug 'norcalli/nvim-colorizer.lua'
 
-"Underlines the word under the cursor
-Plug 'itchyny/vim-cursorword'
+"Automatically highlighting other uses of the current word under the cursor
+Plug 'RRethy/vim-illuminate'
 
 "Make the yanked region apparent
 Plug 'machakann/vim-highlightedyank'
@@ -130,6 +133,8 @@ call plug#end()
 set number
 "Current line highlight
 set cursorline
+"enable mouse
+set mouse=a
 "Interface Configuration
 set termguicolors
 syntax on
@@ -152,8 +157,14 @@ let g:airline_section_z = airline#section#create([
             \ ])
 "--------------------------------------
 
-"Color highlight (nvim-colorizer.lua)
+"--Color highlight (nvim-colorizer.lua)--
 lua require'colorizer'.setup()
+"----------------------------------------
+
+"------Illuminate--------------------
+" Time in milliseconds (default 250)
+let g:Illuminate_delay = 250
+"------------------------------------
 
 "----------Theme------------
 set background=dark
@@ -209,9 +220,9 @@ let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_color_gui = '#ffffff'
 "----------------------------------------------------
 
-"NERDTree configuration
+"----Coc-explorer configuration----
 map <C-n> :CocCommand explorer<CR>
-"
+"---------------------------------
 "Correct comment highlight for json
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
