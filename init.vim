@@ -146,7 +146,7 @@ colorscheme tokyonight
 "Set tabsize to 2 space
 set ts=2 sw=2 et
 "Show whitespace
-set listchars=eol:¬,tab:»·,trail:·,space:·,  
+set listchars=eol:,tab:,trail:·,space:·,  
 set list
 
 "--------Statusbar style---------------
@@ -208,9 +208,7 @@ let g:choosewin_overlay_enable = 1
 "----------------------------------------------
 
 "--------[Indent line character]--------------------
-let g:indentLine_char = ''
-let g:indentLine_first_char = ''
-let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 "Colorize indentline guides 
 let g:indentLine_color_gui = '#ffffff'
 "----------------------------------------------------
