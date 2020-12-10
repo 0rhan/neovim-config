@@ -9,7 +9,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " Theme
-Plug 'sainnhe/edge'
+Plug 'ghifarit53/tokyonight-vim'
 
 " IDE-like tabline
 Plug 'romgrk/barbar.nvim'
@@ -135,9 +135,14 @@ set number
 set cursorline
 "enable mouse
 set mouse=a
-"Interface Configuration
+"------------[Interface Configuration]-------------
 set termguicolors
 syntax on
+set background=dark
+set encoding=UTF-8
+let g:tokyonight_style = 'storm'
+colorscheme tokyonight
+"--------------------------------------------------
 "Set tabsize to 2 space
 set ts=2 sw=2 et
 "Show whitespace
@@ -145,6 +150,7 @@ set listchars=eol:¬,tab:»·,trail:·,space:·,
 set list
 
 "--------Statusbar style---------------
+let g:airline_theme = "tokyonight"
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = "\uE0B8"
 let g:airline_right_sep = "\uE0BA"
@@ -165,17 +171,6 @@ lua require'colorizer'.setup()
 " Time in milliseconds (default 250)
 let g:Illuminate_delay = 250
 "------------------------------------
-
-"----------Theme------------
-set background=dark
-set encoding=UTF-8
-
-" the configuration options should be placed before `colorscheme edge`
-let g:edge_style = 'aura'
-let g:edge_disable_italic_comment = 1
-
-colorscheme edge 
-let g:airline_theme = 'edge'
 
 "Disable continuation of comments to the next line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
