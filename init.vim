@@ -140,8 +140,9 @@ set termguicolors
 syntax on
 set background=dark
 set encoding=UTF-8
-let g:tokyonight_style = 'storm'
 colorscheme tokyonight
+let g:tokyonight_style = 'night'
+let g:tokyonight_transparent_background = 1
 "--------------------------------------------------
 "Set tabsize to 2 space
 set ts=2 sw=2 et
