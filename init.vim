@@ -81,8 +81,8 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 "Coc is an intellisense engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-"A Vim plugin which shows a git diff in the 'gutter
-Plug 'airblade/vim-gitgutter'
+"Plugin uses the sign column to indicate added, modified and removed lines in a file that is managed by a VCS
+Plug 'mhinz/vim-signify'
 
 "Lazygit in vim
 Plug 'kdheepak/lazygit.vim', { 'branch': 'nvim-v0.4.3' }
@@ -227,10 +227,14 @@ nnoremap <silent>    <A-9> :BufferLast<CR>
 
 " Close buffer
 nnoremap <silent>    <A-c> :bw<CR>
-
-
-
 "---------------------------------------------
+
+"-----------------[SIGNIFY CONFIG]---------------------------------------------
+let g:signify_sign_add    = '┃'
+let g:signify_sign_change = '┃'
+let g:signify_sign_delete = '•'
+"____________________________________________________________________________
+
 
 "--------------[choosewin config]--------------
 " invoke with '-'
