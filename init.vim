@@ -69,6 +69,9 @@ Plug 'honza/vim-snippets'
 "Emmet (Zencode)
 Plug 'mattn/emmet-vim'
 
+"Automatically rename closing HTML/XML tags
+Plug 'AndrewRadev/tagalong.vim'
+
 "Auto close (X)HTML tags
 Plug 'alvan/vim-closetag'
 
@@ -244,9 +247,12 @@ let g:choosewin_overlay_enable = 1
 "----------------------------------------------
 
 "--------[Indent line character]--------------------
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char = ''
+let g:indentLine_first_char = ''
+let g:indentLine_showFirstIndentLevel = 1
 "Colorize indentline guides 
-let g:indentLine_color_gui = '#ffffff'
+let g:indentLine_color_gui = '#d0d0d0'
+let g:indentLine_color_term = 252
 "----------------------------------------------------
 
 "----Coc-explorer configuration----
@@ -274,7 +280,7 @@ let g:floaterm_keymap_toggle = '<F12>'
 
 "____________________________CLOSETAG________________________________________
 " Disables auto-close if not in a  region (based on filetype)
-let g:closetag_filenames = '*.html,*.xhtml,*.js'
+let g:closetag_filenames = '*.html,*.xhtml,*.js,*.tsx'
 let g:closetag_regions = {
 \ 'typescript.tsx': 'jsxRegion,tsxRegion',
 \ 'javascript.jsx': 'jsxRegion',
