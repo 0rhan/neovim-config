@@ -20,6 +20,9 @@ Plug 't9md/vim-choosewin'
 "Code search and view tool
 Plug 'dyng/ctrlsf.vim'
 
+"nvim-blame-line prints author, date and summary of the commit belonging to the line underneath the cursor
+Plug 'tveskag/nvim-blame-line'
+
 "A simple plugin to toggle zoom of current window within the current tab.
 Plug 'dhruvasagar/vim-zoom'
 
@@ -267,6 +270,10 @@ let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating
 "Mapping to call lazygit
 nnoremap <silent> <leader>lg :LazyGit<CR> 
 "--------------------------------------------------------------------------
+
+"_______________________{blame-line}________________________________________
+autocmd BufEnter * EnableBlameLine
+"___________________________________________________________________________
 
 "--------------------------FLOATERM-----------------------------------------
 "FloaTerm keymap
