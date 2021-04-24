@@ -97,8 +97,6 @@ Plug 'voldikss/vim-floaterm'
 "vim-nerdtree-syntax-highlight
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-"Vlang support
-Plug 'ollykel/v-vim'
 
 "-----------------------------EXAMPLES------------------------------------------
 " " Make sure you use single quotes
