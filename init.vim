@@ -407,7 +407,8 @@ let g:coc_global_extensions = [
   \'coc-flutter-tools',
   \'coc-json', 
   \'coc-svg', 
-  \'coc-styled-components',]
+  \'coc-styled-components',
+  \'coc-stylelintplus',]
 "____________________________________________________________________
 
 "_________________COC INTELLISENSE ENGINE CONFIGRATION________________
