@@ -9,7 +9,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " Theme
-Plug 'ghifarit53/tokyonight-vim'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 "Devicons
 Plug 'kyazdani42/nvim-web-devicons'
@@ -150,9 +150,10 @@ set termguicolors
 syntax on
 set background=dark
 set encoding=UTF-8
-colorscheme tokyonight
-let g:tokyonight_style = 'night'
-let g:tokyonight_transparent_background = 1
+"---THEME
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'ocean-community'
+colorscheme material 
 "--------------------------------------------------
 "Set tabsize to 2 space
 set ts=2 sw=2 et
@@ -161,7 +162,7 @@ set listchars=eol:,tab:,trail:·,space:·,
 set list
 
 "--------Statusbar style---------------
-let g:airline_theme = "tokyonight"
+let g:airline_theme = 'material'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = "\uE0B8"
 let g:airline_right_sep = "\uE0BA"
