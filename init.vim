@@ -55,7 +55,7 @@ Plug 'RRethy/vim-illuminate'
 Plug 'machakann/vim-highlightedyank'
 
 "Indent Guides
-Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
 
 "Winresizer plugin for easy resizing vim windows
 Plug 'simeji/winresizer'
@@ -194,7 +194,7 @@ let g:nvim_tree_disable_netrw = 0 "1 by default, disables netrw
 let g:nvim_tree_hijack_netrw = 0 "1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
 let g:nvim_tree_add_trailing = 1 "0 by default, append a trailing slash to folder names
 let g:nvim_tree_group_empty = 1 " 0 by default, compact folders that only contain a single folder into one node in the file tree
-let g:nvim_tree_lsp_diagnostics = 1 "0 by default, will show lsp diagnostics in the signcolumn. See :help nvim_tree_lsp_diagnostics
+"let g:nvim_tree_lsp_diagnostics = 1 "0 by default, will show lsp diagnostics in the signcolumn. See :help nvim_tree_lsp_diagnostics
 let g:nvim_tree_special_files = [ 'README.md', 'Makefile', 'MAKEFILE' ] " List of filenames that gets highlighted with NvimTreeSpecialFile
 
 "If 0, do not show the icons for one of 'git' 'folder' and 'files'
@@ -329,12 +329,12 @@ let g:choosewin_overlay_enable = 1
 "----------------------------------------------
 
 "--------[Indent line character]--------------------
-let g:indentLine_char = ''
-let g:indentLine_first_char = ''
-let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_enabled = 1
+let g:indent_blankline_char = '▏'
+let g:indent_blankline_show_trailing_blankline_indent = 0
+let g:indent_blankline_show_first_indent_level = 0 
 "Colorize indentline guides 
-let g:indentLine_color_gui = '#d0d0d0'
-let g:indentLine_color_term = 252
+hi IndentBlanklineChar guifg=#8a9399
 "----------------------------------------------------
 
 "---------------------------------
