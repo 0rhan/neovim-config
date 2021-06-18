@@ -100,8 +100,6 @@ Plug 'kdheepak/lazygit.vim', { 'branch': 'nvim-v0.4.3' }
 "Use (neo)vim terminal in the floating/popup window.
 Plug 'voldikss/vim-floaterm'
 
-"vim-nerdtree-syntax-highlight
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 "-----------------------------EXAMPLES------------------------------------------
 " " Make sure you use single quotes
