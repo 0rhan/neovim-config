@@ -55,7 +55,7 @@ Plug 'RRethy/vim-illuminate'
 Plug 'machakann/vim-highlightedyank'
 
 "Indent Guides
-Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
 
 "Winresizer plugin for easy resizing vim windows
 Plug 'simeji/winresizer'
@@ -327,12 +327,12 @@ let g:choosewin_overlay_enable = 1
 "----------------------------------------------
 
 "--------[Indent line character]--------------------
-let g:indentLine_char = ''
-let g:indentLine_first_char = ''
-let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_enabled = 1
+let g:indent_blankline_char = '▏'
+let g:indent_blankline_show_trailing_blankline_indent = 0
+let g:indent_blankline_show_first_indent_level = 0 
 "Colorize indentline guides 
-let g:indentLine_color_gui = '#d0d0d0'
-let g:indentLine_color_term = 252
+hi IndentBlanklineChar guifg=#8a9399
 "----------------------------------------------------
 
 "---------------------------------
