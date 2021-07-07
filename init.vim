@@ -48,8 +48,8 @@ Plug 'psliwka/vim-smoothie'
 "Color highlighter
 Plug 'norcalli/nvim-colorizer.lua'
 
-"Highlight words and lines on the cursor
-Plug 'yamatsum/nvim-cursorline'
+"Automatically highlighting other uses of the current word under the cursor
+Plug 'RRethy/vim-illuminate'
 
 "Make the yanked region apparent
 Plug 'machakann/vim-highlightedyank'
