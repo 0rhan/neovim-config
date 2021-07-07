@@ -9,7 +9,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " Theme
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'folke/tokyonight.nvim'
 
 "Devicons
 Plug 'kyazdani42/nvim-web-devicons'
@@ -136,6 +136,13 @@ Plug 'voldikss/vim-floaterm'
 " ----------------------------------------------------------------------------
 call plug#end()
 
+"---THEME
+let g:tokyonight_style = "night"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_italic_comments = 1
+let g:tokyonight_italic_keywords = 1
+let g:tokyonight_dark_sidebar = 1
+
 "Codeline numbers
 set number
 "Current line highlight
@@ -143,14 +150,11 @@ set cursorline
 "enable mouse
 set mouse=a
 "------------[Interface Configuration]-------------
-set termguicolors
 syntax on
 set background=dark
 set encoding=UTF-8
-"---THEME
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'ocean-community'
-colorscheme material 
+set termguicolors
+colorscheme tokyonight 
 "--------------------------------------------------
 "Set tabsize to 2 space
 set ts=2 sw=2 et
@@ -159,7 +163,7 @@ set listchars=eol:,tab:,trail:·,space:·,
 set list
 
 "--------Statusbar style---------------
-let g:airline_theme = 'material'
+"let g:airline_theme = 'tokyonight'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = "\uE0B8"
 let g:airline_right_sep = "\uE0BA"
