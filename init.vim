@@ -1,5 +1,5 @@
-"---------------CONFIG INFO---------------------------------,
 "Configuration directory ".config/nvim/init.vim
+"---------------CONFIG INFO---------------------------------,
 "
 " Specify a directory for plugins
 " " - For Neovim: stdpath('data') . '/plugged'
@@ -55,7 +55,7 @@ Plug 'RRethy/vim-illuminate'
 Plug 'machakann/vim-highlightedyank'
 
 "Indent Guides
-Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 "Winresizer plugin for easy resizing vim windows
 Plug 'simeji/winresizer'
@@ -89,6 +89,9 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 
 "Coc is an intellisense engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"Git diff
+Plug 'sindrets/diffview.nvim'
 
 "Plugin uses the sign column to indicate added, modified and removed lines in a file that is managed by a VCS
 Plug 'mhinz/vim-signify'
@@ -143,6 +146,9 @@ let g:tokyonight_italic_comments = 1
 let g:tokyonight_italic_keywords = 1
 let g:tokyonight_dark_sidebar = 1
 
+"GUI font
+set guifont=DejaVuSansMono\ Nerd\ Font\ Mono:h16
+
 "Codeline numbers
 set number
 "Current line highlight
@@ -159,8 +165,8 @@ colorscheme tokyonight
 "Set tabsize to 2 space
 set ts=2 sw=2 et
 "Show whitespace
-set listchars=eol:,tab:,trail:·,space:·,  
 set list
+set listchars=eol:↴,tab:,trail:·,space:·,  
 
 "--------Statusbar style---------------
 "let g:airline_theme = 'tokyonight'
@@ -177,26 +183,79 @@ let g:airline_section_z = airline#section#create([
 "--------------------------------------
 
 "__________________[nvim tree]___________________
+lua << EOF
+require'nvim-tree'.setup {
+  -- disables netrw completely
+  disable_netrw       = true,
+  -- hijack netrw window on startup
+  hijack_netrw        = true,
+  -- open the tree when running this setup function
+  open_on_setup       = false,
+  -- will not open on setup if the filetype is in this list
+  ignore_ft_on_setup  = {},
+  -- closes neovim automatically when the tree is the last **WINDOW** in the view
+  auto_close          = false,
+  -- opens the tree when changing/opening a new tab if the tree wasn't previously opened
+  open_on_tab         = true,
+  -- hijacks new directory buffers when they are opened.
+  update_to_buf_dir   = true,
+  -- hijack the cursor in the tree to put it at the start of the filename
+  hijack_cursor       = true,
+  -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually) 
+  update_cwd          = true,
+  -- show lsp diagnostics in the signcolumn
+  lsp_diagnostics     = true,
+  -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
+  update_focused_file = {
+    -- enables the feature
+    enable      = false,
+    -- update the root directory of the tree to the one of the folder containing the file if the file is not under the current root directory
+    -- only relevant when `update_focused_file.enable` is true
+    update_cwd  = false,
+    -- list of buffer names / filetypes that will not update the cwd if the file isn't found under the current root directory
+    -- only relevant when `update_focused_file.update_cwd` is true and `update_focused_file.enable` is true
+    ignore_list = {}
+  },
+  -- configuration options for the system open command (`s` in the tree by default)
+  system_open = {
+    -- the command to run this, leaving nil should work in most cases
+    cmd  = nil,
+    -- the command arguments as a list
+    args = {}
+  },
+
+  view = {
+    -- width of the window, can be either a number (columns) or a string in `%`
+    width = 30,
+    -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
+    side = 'left',
+    -- if true the tree will resize itself after opening a file
+    auto_resize = false,
+    mappings = {
+      -- custom only false will merge the list with the default mappings
+      -- if true, it will only use your list to set the mappings
+      custom_only = false,
+      -- list of mappings to set on the tree manually
+      list = {}
+    }
+  }
+}
+EOF
+
 let g:nvim_tree_side = 'left' "left by default
-let g:nvim_tree_width = 30 "30 by default
 let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
-let g:nvim_tree_gitignore = 1 "0 by default
+let g:nvim_tree_gitignore = 0 "0 by default
 let g:nvim_tree_auto_open = 0 "0 by default, opens the tree when typing `vim $DIR` or `vim`
 let g:nvim_tree_auto_close = 0 "0 by default, closes the tree when it's the last window
 let g:nvim_tree_auto_ignore_ft = [ 'startify', 'dashboard' ] "empty by default, don't auto open tree on specific filetypes.
 let g:nvim_tree_quit_on_open = 0 "0 by default, closes the tree when you open a file
-let g:nvim_tree_follow = 1 "0 by default, this option allows the cursor to be updated when entering a buffer
 let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
 let g:nvim_tree_hide_dotfiles = 0 "0 by default, this option hides files and folders starting with a dot `.`
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
 let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
-let g:nvim_tree_tab_open = 1 "0 by default, will open the tree when entering a new tab and the tree was previously open
 let g:nvim_tree_width_allow_resize  = 1 "0 by default, will not resize the tree when opening a file
-let g:nvim_tree_disable_netrw = 0 "1 by default, disables netrw
-let g:nvim_tree_hijack_netrw = 0 "1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
 let g:nvim_tree_add_trailing = 1 "0 by default, append a trailing slash to folder names
 let g:nvim_tree_group_empty = 0 " 0 by default, compact folders that only contain a single folder into one node in the file tree
-let g:nvim_tree_lsp_diagnostics = 1 "0 by default, will show lsp diagnostics in the signcolumn. See :help nvim_tree_lsp_diagnostics
 let g:nvim_tree_special_files = [ 'README.md', 'Makefile', 'MAKEFILE' ] " List of filenames that gets highlighted with NvimTreeSpecialFile
 
 "If 0, do not show the icons for one of 'git' 'folder' and 'files'
@@ -252,6 +311,49 @@ hi NvimTreeFolderName guifg = #61afef
 hi NvimTreeIndentMarker guifg= #383c44
 "_________________________________________________________________________________
 
+
+"-------[GIT DIFF]-----------------
+lua <<EOF
+local cb = require'diffview.config'.diffview_callback
+
+require'diffview'.setup {
+  diff_binaries = false,    -- Show diffs for binaries
+  file_panel = {
+    position = "left",      -- One of 'left', 'right', 'top', 'bottom'
+    width = 35,             -- Only applies when position is 'left' or 'right'
+    height = 10,            -- Only applies when position is 'top' or 'bottom'
+    use_icons = true        -- Requires nvim-web-devicons
+  },
+  key_bindings = {
+    disable_defaults = false,                   -- Disable the default key bindings
+    -- The `view` bindings are active in the diff buffers, only when the current
+    -- tabpage is a Diffview.
+    view = {
+      ["<tab>"]     = cb("select_next_entry"),  -- Open the diff for the next file 
+      ["<s-tab>"]   = cb("select_prev_entry"),  -- Open the diff for the previous file
+      ["<leader>e"] = cb("focus_files"),        -- Bring focus to the files panel
+      ["<leader>b"] = cb("toggle_files"),       -- Toggle the files panel.
+    },
+    file_panel = {
+      ["j"]             = cb("next_entry"),         -- Bring the cursor to the next file entry
+      ["<down>"]        = cb("next_entry"),
+      ["k"]             = cb("prev_entry"),         -- Bring the cursor to the previous file entry.
+      ["<up>"]          = cb("prev_entry"),
+      ["<cr>"]          = cb("select_entry"),       -- Open the diff for the selected entry.
+      ["o"]             = cb("select_entry"),
+      ["<2-LeftMouse>"] = cb("select_entry"),
+      ["S"]             = cb("toggle_stage_entry"), -- Stage / unstage the selected entry.
+      ["U"]             = cb("unstage_all"),        -- Unstage all entries.
+      ["X"]             = cb("restore_entry"),      -- Restore entry to the state on the left side.
+      ["R"]             = cb("refresh_files"),      -- Update stats and entries in the file list.
+      ["<tab>"]         = cb("select_next_entry"),
+      ["<s-tab>"]       = cb("select_prev_entry"),
+      ["<leader>e"]     = cb("focus_files"),
+      ["<leader>b"]     = cb("toggle_files"),
+    }
+  }
+}
+EOF
 
 
 "--Color highlight (nvim-colorizer.lua)--
