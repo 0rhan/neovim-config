@@ -91,6 +91,7 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Git diff
+Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim'
 
 "Plugin uses the sign column to indicate added, modified and removed lines in a file that is managed by a VCS
