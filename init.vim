@@ -148,7 +148,7 @@ let g:tokyonight_italic_keywords = 1
 let g:tokyonight_dark_sidebar = 1
 
 "GUI font
-set guifont=DejaVuSansMono\ Nerd\ Font\ Mono:h16
+set guifont=DejaVuSansMono\ Nerd\ Font\ Mono:h12
 
 "Codeline numbers
 set number
