@@ -63,6 +63,9 @@ Plug 'simeji/winresizer'
 "Move lines
 Plug 'matze/vim-move'
 
+"A simple plugin to toggle zoom of current window within the current tab.
+Plug 'dhruvasagar/vim-zoom'
+
 "Nerdcommenter
 Plug 'preservim/nerdcommenter'
 
