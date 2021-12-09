@@ -18,14 +18,14 @@ Plug 'ryanoasis/vim-devicons'
 " IDE-like tabline
 Plug 'romgrk/barbar.nvim'
 
+"Highly extendable fuzzy finder
+Plug 'nvim-telescope/telescope.nvim'
+
 "File explorer written in lua
 Plug 'kyazdani42/nvim-tree.lua'
 
 "This plugin aims to mimic tmux's display-pane feature, which enables you to choose a window interactively.
 Plug 't9md/vim-choosewin'
-
-"Code search and view tool
-Plug 'dyng/ctrlsf.vim'
 
 "nvim-blame-line prints author, date and summary of the commit belonging to the line underneath the cursor
 Plug 'tveskag/nvim-blame-line'
@@ -193,6 +193,12 @@ let g:airline_section_z = airline#section#create([
             \ '%#__accent_bold#%3v%#__restore__#/%3{virtcol("$") - 1}',
             \ ])
 "--------------------------------------
+
+"-----------------[telescope fzf]------------------
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 "__________________[nvim tree]___________________
 lua << EOF
