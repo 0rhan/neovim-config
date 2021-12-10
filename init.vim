@@ -87,6 +87,10 @@ Plug 'alvan/vim-closetag'
 "Styled components syntax highlighting
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
+"Vim commands for Flutter
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
+
 "JSX
 Plug 'MaxMEllon/vim-jsx-pretty'
 
@@ -544,6 +548,13 @@ let g:user_emmet_settings = {
 let b:coc_pairs_disabled = ['<']
 "____________________________________________________________________________
 
+
+"----------------------------[Vim-flutter]-----------------------------------
+nnoremap <leader>fa :FlutterRun<cr>
+nnoremap <leader>fq :FlutterQuit<cr>
+nnoremap <leader>fr :FlutterHotReload<cr>
+nnoremap <leader>fR :FlutterHotRestart<cr>
+nnoremap <leader>fD :FlutterVisualDebug<cr>
 
 "__________________COC EXTENSIONS CONFIGURATION_______________________
 let g:coc_global_extensions = [
