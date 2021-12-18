@@ -576,6 +576,7 @@ let g:coc_global_extensions = [
   \'coc-eslint', 
   \'coc-webpack',
   \'coc-react-refactor',
+  \'coc-vetur',
   \'coc-flutter',
   \'coc-json', 
   \'coc-svg', 
