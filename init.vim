@@ -75,6 +75,9 @@ Plug 'sheerun/vim-polyglot'
 "Snippets
 Plug 'honza/vim-snippets'
 
+"Syntax highlighting and indentation for Svelte 3 components.
+Plug 'evanleck/vim-svelte'
+
 "Emmet (Zencode)
 Plug 'mattn/emmet-vim'
 
@@ -105,9 +108,8 @@ Plug 'sindrets/diffview.nvim'
 "Lazygit in vim
 Plug 'kdheepak/lazygit.vim', { 'branch': 'nvim-v0.4.3' }
 
-"FloaTerm
-"Use (neo)vim terminal in the floating/popup window.
-Plug 'voldikss/vim-floaterm'
+"Persist and toggle multiple terminals during an editing session
+Plug 'akinsho/toggleterm.nvim'
 
 
 "-----------------------------EXAMPLES------------------------------------------
@@ -154,6 +156,8 @@ let g:tokyonight_dark_sidebar = 1
 
 "GUI font
 set guifont=DejaVuSansMono\ Nerd\ Font\ Mono:h12
+
+set hidden
 
 "System clipboard
 nmap <c-c> "+y
@@ -423,6 +427,26 @@ require'diffview'.setup {
 }
 EOF
 
+"-------------[TOGGLETERM]-----------------
+inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
+lua <<EOF
+require("toggleterm").setup{
+  -- size can be a number or function which is passed the current terminal
+  size = 20,
+  open_mapping = [[<F12>]],
+  hide_numbers = true, -- hide the number column in toggleterm buffers
+  shade_filetypes = {},
+  shade_terminals = true,
+  shading_factor = 1, -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
+  start_in_insert = true,
+  insert_mappings = false, -- whether or not the open mapping applies in insert mode
+  persist_size = true,
+  direction = "horizontal",
+  close_on_exit = true, -- close the terminal window when the process exits
+  shell = vim.o.shell, -- change the default shell
+}
+EOF
+"---------------------------------------------
 
 "--Color highlight (nvim-colorizer.lua)--
 lua require'colorizer'.setup()
@@ -516,15 +540,6 @@ let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating
 nnoremap <silent> <leader>lg :LazyGit<CR> 
 "--------------------------------------------------------------------------
 
-
-"--------------------------FLOATERM-----------------------------------------
-"FloaTerm keymap
-let g:floaterm_keymap_new    = '<F7>'
-let g:floaterm_keymap_prev   = '<F8>'
-let g:floaterm_keymap_next   = '<F9>'
-let g:floaterm_keymap_toggle = '<F12>'
-"---------------------------------------------------------------------------
-
 "____________________________CLOSETAG________________________________________
 " Disables auto-close if not in a  region (based on filetype)
 let g:closetag_filenames = '*.html,*.xhtml,*.js,*.tsx'
@@ -574,10 +589,9 @@ let g:coc_global_extensions = [
   \'coc-cssmodules',
   \'coc-tsserver',
   \'coc-eslint', 
+  \'coc-svelte',
   \'coc-webpack',
   \'coc-react-refactor',
-  \'coc-vetur',
-  \'coc-flutter',
   \'coc-json', 
   \'coc-svg', 
   \'coc-styled-components',
@@ -586,7 +600,6 @@ let g:coc_global_extensions = [
 
 "_________________COC INTELLISENSE ENGINE CONFIGRATION________________
 " if hidden is not set, TextEdit might fail.
-set hidden
 
 " Some servers have issues with backup files, see #649
 set nobackup
