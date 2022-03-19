@@ -1,0 +1,6 @@
+require('plugins')
+require('settings.keymaps')
+require('settings.UI.interface')
+require('settings.UI.tabline')
+require('settings.UI.file_explorer')
+require('settings.editor')

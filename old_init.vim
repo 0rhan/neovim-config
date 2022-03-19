@@ -8,21 +8,11 @@
 
 call plug#begin('~/.config/nvim/plugged')
 
-" Theme
-Plug 'folke/tokyonight.nvim'
-
-"Devicons
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'ryanoasis/vim-devicons'
-
 " IDE-like tabline
 Plug 'romgrk/barbar.nvim'
 
 "Highly extendable fuzzy finder
 Plug 'nvim-telescope/telescope.nvim'
-
-"File explorer written in lua
-Plug 'kyazdani42/nvim-tree.lua'
 
 "This plugin aims to mimic tmux's display-pane feature, which enables you to choose a window interactively.
 Plug 't9md/vim-choosewin'
@@ -157,8 +147,6 @@ let g:tokyonight_dark_sidebar = 1
 "GUI font
 set guifont=DejaVuSansMono\ Nerd\ Font\ Mono:h12
 
-set hidden
-
 "System clipboard
 nmap <c-c> "+y
 vmap <c-c> "+y
@@ -167,24 +155,12 @@ inoremap <c-v> <c-r>+
 cnoremap <c-v> <c-r>+
 "use <c-r> to insert original character without triggering things like auto-pairs
 inoremap <c-r> <c-v>
-"Codeline numbers
-set number
-"Current line highlight
-set cursorline
-"enable mouse
-set mouse=a
 "------------[Interface Configuration]-------------
-syntax on
-set background=dark
-set encoding=UTF-8
 set termguicolors
 colorscheme tokyonight 
 "--------------------------------------------------
 "Set tabsize to 2 space
 set ts=2 sw=2 et
-"Show whitespace
-set list
-set listchars=eol:↴,tab:,trail:·,space:·,  
 
 "--------Statusbar style---------------
 "let g:airline_theme = 'tokyonight'
