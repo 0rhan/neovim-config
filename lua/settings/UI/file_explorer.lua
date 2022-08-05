@@ -1,7 +1,6 @@
 local g = vim.g
 local highlight = vim.highlight
 
-g.nvim_tree_indent_markers = 1
 g.nvim_tree_git_hl = 1
 g.nvim_nvim_tree_highlight_opened_files = 1
 g.nvim_tree_add_trailing = 1
@@ -43,7 +42,6 @@ require'nvim-tree'.setup {
   open_on_setup        = false,
   ignore_buffer_on_setup = false,
   ignore_ft_on_setup   = {},
-  auto_close           = false,
   auto_reload_on_write = true,
   open_on_tab          = true,
   hijack_cursor        = true,
@@ -53,9 +51,13 @@ require'nvim-tree'.setup {
     enable = true,
     auto_open = true,
   },
+  renderer = {
+    indent_markers = {
+      enable = true,
+    };
+  };
   diagnostics = {
     enable = enable,
-    show_ond_dirs = true,
     icons = {
       hint = "",
       info = "",
