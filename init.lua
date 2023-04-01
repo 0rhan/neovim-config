@@ -9,3 +9,6 @@ require('settings.editor')
 require("settings.LSP.mason-lspconfig")
 require("settings.LSP.lspconfig")
 require("settings.CMP.nvim_cmp")
+
+-- Flutter
+require("settings.flutter_tools")
