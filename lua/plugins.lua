@@ -24,6 +24,8 @@ return require('packer').startup(function(use)
 
   use {'kyazdani42/nvim-tree.lua', config = function() require'nvim-tree'.setup {} end}
 
+  use "petertriho/nvim-scrollbar"
+
   --LSP
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use {
