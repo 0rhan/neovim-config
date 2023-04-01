@@ -5,8 +5,10 @@ local bufferOptions = vim.bo
 globalOptions.hidden = true
 globalOptions.mouse = 'a'
 
--- buffer options
 bufferOptions.syntax='on'
-bufferOptions.ts = 2
-bufferOptions.sw = 2
-bufferOptions.et = true
+
+
+globalOptions.tabstop = 2
+globalOptions.shiftwidth = 2
+globalOptions.expandtab = true
+bufferOptions.softtabstop = 2
