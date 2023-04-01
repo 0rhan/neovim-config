@@ -16,11 +16,34 @@ return require('packer').startup(function(use)
 
   use 'folke/tokyonight.nvim'
 
+  use 'L3MON4D3/LuaSnip'
+
   use {'ryanoasis/vim-devicons', {'kyazdani42/nvim-web-devicons'}}
 
   use 'romgrk/barbar.nvim'
 
   use {'kyazdani42/nvim-tree.lua', config = function() require'nvim-tree'.setup {} end}
+
+  --LSP
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+    "onsails/lspkind.nvim",
+  }
+
+  --CMP
+  use {
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    'saadparwaiz1/cmp_luasnip',
+    'hrsh7th/cmp-nvim-lsp-signature-help',
+    'davidsierradz/cmp-conventionalcommits',
+    'ray-x/cmp-treesitter',
+  }
 
   if packer_bootstrap then
     require('packer').sync()
