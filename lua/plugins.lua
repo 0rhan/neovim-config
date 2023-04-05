@@ -26,6 +26,8 @@ return require('packer').startup(function(use)
 
   use "petertriho/nvim-scrollbar"
 
+  use {"akinsho/toggleterm.nvim", tag = '*'}
+
   --LSP
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use {
