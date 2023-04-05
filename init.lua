@@ -2,6 +2,7 @@
 require('plugins')
 require('settings.keymaps')
 require('settings.editor')
+require('settings.formatter')
 
 --UI
 require('settings.UI.scrollbar')
