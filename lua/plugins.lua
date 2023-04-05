@@ -35,6 +35,8 @@ return require("packer").startup(function(use)
 
   use("mhartington/formatter.nvim")
 
+  use("lukas-reineke/indent-blankline.nvim")
+
   --LSP
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   use({
