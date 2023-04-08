@@ -28,5 +28,41 @@ require("formatter").setup({
     c = {
       require("formatter.filetypes.c").clangformat,
     },
+    css = {
+      require("formatter.filetypes.css").prettier,
+    },
+    html = {
+      require("formatter.filetypes.html").prettier,
+    },
+    java = {
+      require("formatter.filetypes.java").clangformat,
+    },
+    javascript = {
+      require("formatter.filetypes.javascript").prettier,
+    },
+    javascriptreact = {
+      require("formatter.filetypes.javascriptreact").prettier,
+    },
+    typescript = {
+      require("formatter.filetypes.typescript").prettier,
+    },
+    typescriptreact = {
+      require("formatter.filetypes.typescriptreact").prettier,
+    },
+    json = {
+      require("formatter.filetypes.json").prettier,
+    },
+    sh = {
+      require("formatter.filetypes.sh").shfmt,
+    },
+    sql = {
+      require("formatter.filetypes.sql").pgformat,
+    },
+    toml = {
+      require("formatter.filetypes.toml").taplo,
+    },
+    yaml = {
+      require("formatter.filetypes.yaml").prettier,
+    },
   },
 })
