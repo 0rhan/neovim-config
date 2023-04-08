@@ -13,6 +13,7 @@ require("settings.UI.toggleterm")
 require("settings.UI.indent_blankline")
 require("settings.UI.telescope")
 require("settings.UI.trouble")
+require("settings.UI.gitsigns")
 
 -- LSP
 require("settings.LSP.mason-lspconfig")

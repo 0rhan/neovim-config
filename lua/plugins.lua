@@ -37,6 +37,10 @@ return require("packer").startup(function(use)
 
   use("folke/trouble.nvim")
 
+  use({
+    "lewis6991/gitsigns.nvim",
+  })
+
   use({ "akinsho/toggleterm.nvim", tag = "*" })
 
   use("mhartington/formatter.nvim")
