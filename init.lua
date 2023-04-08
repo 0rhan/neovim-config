@@ -17,6 +17,7 @@ require("settings.LSP.mason-lspconfig")
 require("settings.LSP.lspconfig")
 require("settings.CMP.nvim_cmp")
 require("settings.LSP.treesitter")
+require("settings.LSP.treesitter_context")
 
 -- Flutter
 require("settings.flutter_tools")
