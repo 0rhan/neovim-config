@@ -35,6 +35,8 @@ return require("packer").startup(function(use)
     tag = "0.1.1",
   })
 
+  use("folke/trouble.nvim")
+
   use({ "akinsho/toggleterm.nvim", tag = "*" })
 
   use("mhartington/formatter.nvim")
