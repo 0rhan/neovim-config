@@ -30,6 +30,10 @@ return require("packer").startup(function(use)
   })
 
   use("petertriho/nvim-scrollbar")
+  use({
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.1",
+  })
 
   use({ "akinsho/toggleterm.nvim", tag = "*" })
 

@@ -11,6 +11,7 @@ require('settings.UI.tabline')
 require('settings.UI.file_explorer')
 require('settings.UI.toggleterm')
 require('settings.UI.indent_blankline')
+require('settings.UI.telescope')
 
 -- LSP
 require("settings.LSP.mason-lspconfig")
