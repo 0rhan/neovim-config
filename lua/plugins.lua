@@ -47,6 +47,8 @@ return require("packer").startup(function(use)
 
   use("lukas-reineke/indent-blankline.nvim")
 
+  use("mfussenegger/nvim-dap")
+
   --LSP
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   use("nvim-treesitter/nvim-treesitter-context")
