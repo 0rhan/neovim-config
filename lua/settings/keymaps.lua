@@ -4,9 +4,10 @@ vim.g.mapleader = "\\"
 
 map("n", "<C-n>", ":NvimTreeToggle<CR>", options)
 map("n", "<leader>r", "NvimTreeRefresh<CR>", options)
+map("n", "<C-f>", ":/", options)
 
 -- Formatter plugin
-map("n", "<C-f>", ":Format<CR>", options)
+map("n", "<S-f>", ":Format<CR>", options)
 map("n", "<leader>F", ":FormatWrite<CR>", options)
 
 -- Telescope
