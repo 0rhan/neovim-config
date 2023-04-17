@@ -3,6 +3,8 @@ require("plugins")
 require("settings.keymaps")
 require("settings.editor")
 require("settings.formatter")
+require("settings.autopairs")
+
 
 --UI
 require("settings.UI.scrollbar")

@@ -73,6 +73,8 @@ return require("packer").startup(function(use)
     "ray-x/cmp-treesitter",
   })
 
+  use("windwp/nvim-autopairs")
+
   use({
     "akinsho/flutter-tools.nvim",
     requires = {

@@ -1,3 +1,4 @@
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 local lspkind = require('lspkind')
  -- Set up nvim-cmp.
   local cmp = require'cmp'
@@ -69,6 +70,10 @@ local lspkind = require('lspkind')
       { name = 'cmdline' }
     })
   })
+
+-- Insert `(` after select function or method item
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
 
   -- Set up lspconfig.
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
