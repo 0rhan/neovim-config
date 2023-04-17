@@ -51,6 +51,8 @@ return require("packer").startup(function(use)
 
   use("rcarriga/nvim-notify")
 
+  use("simrat39/symbols-outline.nvim")
+
   --LSP
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   use("nvim-treesitter/nvim-treesitter-context")

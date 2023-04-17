@@ -16,6 +16,7 @@ require("settings.UI.indent_blankline")
 require("settings.UI.telescope")
 require("settings.UI.trouble")
 require("settings.UI.gitsigns")
+require("settings.UI.symbols_outline")
 
 -- LSP
 require("settings.LSP.mason-lspconfig")
