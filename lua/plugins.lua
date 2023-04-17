@@ -49,6 +49,8 @@ return require("packer").startup(function(use)
 
   use("mfussenegger/nvim-dap")
 
+  use("rcarriga/nvim-notify")
+
   --LSP
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   use("nvim-treesitter/nvim-treesitter-context")
