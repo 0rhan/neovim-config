@@ -51,6 +51,8 @@ return require("packer").startup(function(use)
 
   use("rcarriga/nvim-notify")
 
+  use("folke/todo-comments.nvim")
+
   use("simrat39/symbols-outline.nvim")
 
   --LSP

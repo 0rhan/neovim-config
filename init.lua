@@ -5,7 +5,6 @@ require("settings.editor")
 require("settings.formatter")
 require("settings.autopairs")
 
-
 --UI
 require("settings.UI.scrollbar")
 require("settings.UI.interface")
@@ -17,6 +16,7 @@ require("settings.UI.telescope")
 require("settings.UI.trouble")
 require("settings.UI.gitsigns")
 require("settings.UI.symbols_outline")
+require("settings.UI.todo_comments")
 
 -- LSP
 require("settings.LSP.mason-lspconfig")
