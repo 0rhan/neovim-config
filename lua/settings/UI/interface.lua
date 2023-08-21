@@ -11,10 +11,10 @@ globalOptions.listchars = "eol:↴,tab:,trail:·,space:·,"
 vim.o.updatetime = 250
 
 local signs = {
-  Error = " ",
-  Warn = " ",
-  Hint = " ",
-  Info = " ",
+  Error = "",
+  Warn = "",
+  Hint = "",
+  Info = "󰋼",
 }
 
 -- [DIAGNOSTICS]
