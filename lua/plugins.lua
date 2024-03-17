@@ -32,7 +32,7 @@ return require("packer").startup(function(use)
   use("petertriho/nvim-scrollbar")
   use({
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.1",
+    tag = "0.1.5",
   })
 
   use("folke/trouble.nvim")
@@ -93,3 +93,6 @@ return require("packer").startup(function(use)
     require("packer").sync()
   end
 end)
+
+--TODO: Replace packer with lazy
+--TODO: Install dropbar
