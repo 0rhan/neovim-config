@@ -28,6 +28,12 @@ require("formatter").setup({
     c = {
       require("formatter.filetypes.c").clangformat,
     },
+    cpp = {
+      require("formatter.filetypes.c").clangformat,
+    },
+    rust = {
+      require("formatter.filetypes.rust").rustfmt,
+    },
     css = {
       require("formatter.filetypes.css").prettier,
     },
