@@ -19,7 +19,7 @@ map("n", "<A-8>", ":BufferGoto 8<CR>", opts)
 map("n", "<A-9>", ":BufferGoto 9<CR>", opts)
 map("n", "<A-0>", ":BufferLast<CR>", opts)
 -- Close buffer
-map("n", "<A-c>", ":bw<CR>", opts)
+map("n", "<C-c>", ":bw<CR>", opts)
 -- Wipeout buffer
 --                 :BufferWipeout<CR>
 -- Close commands
@@ -33,17 +33,9 @@ map("n", "<Space>bb", ":BufferOrderByBufferNumber<CR>", opts)
 map("n", "<Space>bd", ":BufferOrderByDirectory<CR>", opts)
 map("n", "<Space>bl", ":BufferOrderByLanguage<CR>", opts)
 
--- Other:
--- :BarbarEnable - enables barbar (enabled by default)
--- :BarbarDisable - very bad command, should never be used
-
 vim.g.barbar_auto_setup = false -- disable auto-setup
 
 require("barbar").setup({
-  -- WARN: do not copy everything below into your config!
-  --       It is just an example of what configuration options there are.
-  --       The defaults are suitable for most people.
-
   -- Enable/disable animations
   animation = true,
 
@@ -64,7 +56,7 @@ require("barbar").setup({
   focus_on_close = "left",
 
   -- Hide inactive buffers and file extensions. Other options are `alternate`, `current`, and `visible`.
-  hide = { extensions = true, inactive = true },
+  hide = { extensions = false, inactive = false },
 
   -- Disable highlighting alternate buffers
   highlight_alternate = false,
@@ -76,8 +68,6 @@ require("barbar").setup({
   highlight_visible = true,
 
   icons = {
-    -- Configure the base icons on the bufferline.
-    -- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
     buffer_index = false,
     buffer_number = false,
     button = "",
@@ -104,7 +94,7 @@ require("barbar").setup({
     separator = { left = "▎", right = "" },
 
     -- If true, add an additional separator at the end of the buffer list
-    separator_at_end = true,
+    separator_at_end = false,
 
     -- Configure the icons on the bufferline when modified or pinned.
     -- Supports all the base icon options.
@@ -112,7 +102,7 @@ require("barbar").setup({
     pinned = { button = "", filename = true },
 
     -- Use a preconfigured buffer appearance— can be 'default', 'powerline', or 'slanted'
-    preset = "default",
+    preset = "slanted",
 
     -- Configure the icons on the bufferline based on the visibility of a buffer.
     -- Supports all the base icon options, plus `modified` and `pinned`.
@@ -124,7 +114,7 @@ require("barbar").setup({
 
   -- If true, new buffers will be inserted at the start/end of the list.
   -- Default is to insert after current buffer.
-  insert_at_end = false,
+  insert_at_end = true,
   insert_at_start = false,
 
   -- Sets the maximum padding width with which to surround each tab

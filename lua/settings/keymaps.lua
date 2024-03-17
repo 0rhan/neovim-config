@@ -1,3 +1,4 @@
+local builtin = require("telescope.builtin")
 local map = vim.api.nvim_set_keymap
 options = { noremap = true }
 vim.g.mapleader = "\\"
@@ -11,10 +12,10 @@ map("n", "<S-f>", ":Format<CR>", options)
 map("n", "<leader>F", ":FormatWrite<CR>", options)
 
 -- Telescope
-map("n", "<leader>ff", ":Telescope find_files<CR>", options)
-map("n", "<leader>fg", ":Telescope live_grep<CR>", options)
-map("n", "<leader>fb", ":Telescope buffers<CR>", options)
-map("n", "<leader>fh", ":Telescope help_tags<CR>", options)
+vim.keymap.set("n", "<leader>ff", builtin.find_files, options)
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, options)
+vim.keymap.set("n", "<leader>fb", builtin.buffers, options)
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, options)
 
 -- Trouble
 map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", options)
@@ -23,3 +24,5 @@ map("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", options)
 map("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", options)
 map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", options)
 map("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", options)
+
+-- TODO: Install plugin for keymap managment

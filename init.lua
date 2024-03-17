@@ -27,3 +27,6 @@ require("settings.LSP.treesitter_context")
 
 -- Flutter
 require("settings.flutter_tools")
+
+--TODO: Change config structure
+--TODO: Delete old files

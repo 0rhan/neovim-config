@@ -1,10 +1,12 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
+    "cmake",
     "lua_ls",
     "pyright",
     "clangd",
-    "nil_ls",
+    "rust_analyzer",
+    "rnix",
     "cssls",
     "cssmodules_ls",
     "dockerls",
