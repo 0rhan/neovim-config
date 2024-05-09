@@ -12,6 +12,7 @@ require("nvim-treesitter.configs").setup({
     "nix",
     "python",
     "html",
+    "xml",
     "java",
     "javascript",
     "json",
