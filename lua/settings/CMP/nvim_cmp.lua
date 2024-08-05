@@ -77,6 +77,9 @@ cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 -- Set up lspconfig.
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+require("lspconfig").zls.setup({
+  capabilities = capabilities,
+})
 require("lspconfig").clangd.setup({
   capabilities = capabilities,
 })

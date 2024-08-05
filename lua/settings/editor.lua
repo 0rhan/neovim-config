@@ -5,8 +5,8 @@ local bufferOptions = vim.bo
 globalOptions.hidden = true
 globalOptions.mouse = 'a'
 -- disable netrw
-globalOptions.loaded_netrw = 1
-globalOptions.loaded_netrwPlugin = 1
+--globalOptions.loaded_netrw = 1
+--globalOptions.loaded_netrwPlugin = 1
 
 bufferOptions.syntax='on'
 

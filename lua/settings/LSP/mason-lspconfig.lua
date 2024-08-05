@@ -3,8 +3,9 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "cmake",
     "lua_ls",
-    "pyright",
+    "pylsp",
     "clangd",
+    "zls",
     "rust_analyzer",
     "rnix",
     "cssls",
@@ -12,6 +13,7 @@ require("mason-lspconfig").setup({
     "dockerls",
     "docker_compose_language_service",
     "html",
+    "css",
     "jsonls",
     "jdtls",
     "tsserver",
