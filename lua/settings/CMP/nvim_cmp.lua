@@ -86,7 +86,7 @@ require("lspconfig").clangd.setup({
 require("lspconfig").rust_analyzer.setup({
   capabilities = capabilities,
 })
-require("lspconfig").pyright.setup({
+require("lspconfig").basedpyright.setup({
   capabilities = capabilities,
 })
 require("lspconfig").lua_ls.setup({
