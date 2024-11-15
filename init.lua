@@ -4,6 +4,7 @@ require("settings.keymaps")
 require("settings.editor")
 require("settings.formatter")
 require("settings.autopairs")
+require("settings.container")
 
 --UI
 require("settings.UI.scrollbar")
