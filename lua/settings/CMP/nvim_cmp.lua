@@ -101,4 +101,13 @@ require("lspconfig").dartls.setup({
 require("lspconfig").bashls.setup({
   capabilities = capabilities,
 })
+require("lspconfig").yamlls.setup({
+  capabilities = capabilities,
+})
+require("lspconfig").dockerls.setup({
+  capabilities = capabilities,
+})
+require("lspconfig").docker_compose_language_service.setup({
+  capabilities = capabilities,
+})
 

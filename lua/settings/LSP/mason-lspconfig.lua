@@ -22,6 +22,8 @@ require("mason-lspconfig").setup({
     "lemminx",
     "yamlls",
     "bashls",
+    "dockerls"
   },
+  
   automatic_installation = true,
 })
